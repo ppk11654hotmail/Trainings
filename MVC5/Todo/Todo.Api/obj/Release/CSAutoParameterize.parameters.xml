@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="TodoContext-Web.config Connection String" description="TodoContext 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="Data Source=(LocalDB)\v11.0;Initial Catalog=Todos;Integrated Security=True;MultipleActiveResultSets=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Projects\\MVC5\\Trainings\\Todo\\Todo\.Api\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TodoContext']/@connectionString" />
-  </parameter>
-</parameters>

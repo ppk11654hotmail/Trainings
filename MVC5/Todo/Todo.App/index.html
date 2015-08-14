@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/config.js"></script>
+    <script src="Scripts/Todo.js"></script>
+</head>
+<body>
+    <div data-role="view"
+         data-model="app.todo.viewModel"
+         data-init="app.todo.init">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title">待辦事項</span>
+            </div>
+        </header>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <a data-bind="enabled: checkInput, click: onAdd" data-role="button" data-icon="add"></a>
+                <input type="text" data-bind="value:description" placeholder="請輸入待辦事項" style="width:80%" />
+            </li>
+        </ul>
+        <ul id=" todo" data-role="listview"
+            data-template="todoListTemp"
+            data-style="inset"
+            data-bind="source:todoList"></ul>
+    </div>
+    <script type="text/x-kendo-template" id="todoListTemp">
+        <button data-bind="click: onDelete, enabled:IsDone" data-role="button" data-icon="delete" />
+        <span data-bind="text:Description"></span>
+        <input type="checkbox" data-role="switch"
+               data-bind="checked:IsDone ,events: { change: onChange }"
+               data-on-label="完成"
+               data-off-label="未完">
+    </script>
+</body>
+</html>
